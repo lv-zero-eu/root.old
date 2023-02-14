@@ -10,7 +10,9 @@
 
 <div class="building">
   <div class="roof">
-    <i class="light" /> <i class="light" />
+    {#if roofLight}
+      <i class="light" /> <i class="light" />
+    {/if}
   </div>
   <div class="windows">
     {#each windows as _, h}
@@ -24,6 +26,11 @@
 </div>
 
 <style>
+  @media (max-width: 480px) {
+    .building {
+      zoom: calc(0.75);
+    }
+  }
   .roof {
     margin-left: 7.5%;
     width: 85%;
