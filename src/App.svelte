@@ -1,10 +1,14 @@
 <script lang="ts">
   import {} from "svelte/easing";
   import Building from "./lib/Building.svelte";
+  import Meteorite from "./lib/Meteorite.svelte";
   import Wave from "./lib/Wave.svelte";
 </script>
 
 <main>
+  <div class="meteorites">
+    <Meteorite />
+  </div>
   <h1>
     <Wave>🖖</Wave>
     <div class="">You lost your way👨‍🦯</div>
@@ -18,6 +22,7 @@
 
 <style>
   main {
+    overflow: hidden;
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, #000611 0.01%, #002e69 100%);
@@ -27,10 +32,16 @@
     flex-direction: column;
     justify-content: center;
   }
+  .meteorites {
+    overflow: hidden;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+  }
   main h1 {
-    margin-top: calc(50vh - 40px *2);
+    margin-top: calc(50vh - 40px * 2);
     font-weight: 700;
-    font-size: 40px;
+    font-size: 2.3em;
   }
   main .buildings {
     margin-top: auto;
