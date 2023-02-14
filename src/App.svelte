@@ -7,7 +7,7 @@
 <main>
   <h1>
     <Wave>🖖</Wave>
-    <div class="">You lost your way 👨‍🦯</div>
+    <div class="">You lost your way👨‍🦯</div>
   </h1>
   <div class="buildings">
     <Building />
@@ -28,7 +28,7 @@
     justify-content: center;
   }
   main h1 {
-    margin-top: 48%;
+    margin-top: calc(50vh - 40px *2);
     font-weight: 700;
     font-size: 40px;
   }

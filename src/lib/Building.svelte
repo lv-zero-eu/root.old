@@ -1,23 +1,22 @@
 <script lang="ts">
+  import Window from "./Window.svelte";
+
   export let width = 3;
   export let height = 3;
+  export let roofLight = true;
 
-  const windows = Array(height).fill(
-    Array(width).fill((w) => {
-      {
-      }
-    })
-  );
-
-  console.log(windows);
+  const windows = Array(height).fill(Array(width).fill({}));
 </script>
 
 <div class="building">
+  <div class="roof">
+    <i class="light" /> <i class="light" />
+  </div>
   <div class="windows">
     {#each windows as _, h}
       <div class={`row row-${h}`}>
         {#each windows[h] as _, w}
-          <div class={`cell cell-${h * windows.length + w}`} />
+          <Window id={h * windows.length + w} />
         {/each}
       </div>
     {/each}
@@ -25,27 +24,45 @@
 </div>
 
 <style>
+  .roof {
+    margin-left: 7.5%;
+    width: 85%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .roof .light {
+    display: block;
+    width: 10px;
+    height: 10px;
+    animation-name: pulse;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+  }
   .windows {
     width: fit-content;
     background: rgba(0, 0, 0, 0.6);
     padding: 25px 15px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
   }
   .row {
     display: flex;
     flex-direction: row;
-    gap: 12px;
-  }
-  .cell {
-    display: block;
-    width: 25px;
-    height: 25px;
-    background: #dcdd9e;
+    gap: 18px;
   }
 
-  .row:nth-child(1) > .cell:nth-child(2) {
-    background-color: #002960;
+  @keyframes pulse {
+    0% {
+      background-color: rgb(185, 9, 9);
+    }
+    100% {
+      background-color: rgba(147, 11, 11, 0.7);
+    }
   }
 </style>
