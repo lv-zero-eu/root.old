@@ -43,8 +43,9 @@
     display: block;
     width: 10px;
     height: 10px;
+    border-radius: 3px 3px 0 0;
     animation-name: pulse;
-    animation-duration: 3s;
+    animation-duration: 1.8s;
     animation-timing-function: ease-in-out;
     animation-direction: alternate;
     animation-iteration-count: infinite;

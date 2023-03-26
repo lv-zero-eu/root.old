@@ -33,12 +33,14 @@
     justify-content: center;
   }
   .meteorites {
+    z-index: 0;
     overflow: hidden;
     position: absolute;
     width: 100vw;
     height: 100vh;
   }
   main h1 {
+    z-index: 1;
     margin-top: calc(50vh - 40px * 2);
     font-weight: 700;
     font-size: 2.3em;

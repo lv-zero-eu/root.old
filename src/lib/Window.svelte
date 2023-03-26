@@ -3,16 +3,17 @@
 
   export let id: number;
   export let light = Math.random() > 0.15;
-  export let animate = light && Math.random() > 0.3;
+  export let animate = light && Math.random() < 0.4;
 
   let interval: number;
 
   if (animate) {
     setTimeout(() => {
+      light = !light;
       interval = setInterval(() => {
         light = !light;
       }, 4000 + Math.random() * 10000);
-    }, Math.random() * 1000);
+    }, Math.random() * 10000);
   }
 
   onDestroy(() => {
