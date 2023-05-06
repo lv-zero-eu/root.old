@@ -6,9 +6,9 @@
 </script>
 
 <main>
-  <div class="meteorites">
+  <!-- <div class="meteorites">
     <Meteorite />
-  </div>
+  </div> -->
   <h1>
     <Wave>🖖</Wave>
     <div class="">You lost your way👨‍🦯</div>
