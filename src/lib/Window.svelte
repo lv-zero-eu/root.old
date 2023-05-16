@@ -2,7 +2,7 @@
   import { onDestroy } from "svelte";
 
   export let id: number;
-  export let light = Math.random() > 0.15;
+  export let light = Math.random() > 0.20;
   export let animate = light && Math.random() < 0.4;
 
   let interval: number;
@@ -12,8 +12,8 @@
       light = !light;
       interval = setInterval(() => {
         light = !light;
-      }, 4000 + Math.random() * 10000);
-    }, Math.random() * 10000);
+      }, 4000 + Math.random() * 1000);
+    }, Math.random() * 5000);
   }
 
   onDestroy(() => {
