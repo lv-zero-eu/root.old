@@ -14,7 +14,6 @@ dist-ssr
 
 # Editor directories and files
 .pnpm-store/
-.devcontainer/
 .vscode/*
 !.vscode/extensions.json
 .idea
